@@ -25,24 +25,18 @@ public class Juego {
 			System.out.println("Jugador 2: " + opcion_JUGADOR2 + "\t Jugador 2 - Partidas ganadas: " + EXITOS_jugador2);
 
 			if ((opcion_JUGADOR1.equals("piedra")) && (opcion_JUGADOR2.equals("papel"))) {
-				System.out.println("Jugador 2 GANA");
-				EXITOS_jugador2 = ++p2.éxitos;
+				EXITOS_jugador2 = ganaJg2(p2);
 
 			} else if ((opcion_JUGADOR1.equals("papel")) && (opcion_JUGADOR2.equals("piedra"))) {
-				EXITOS_jugador1 = ++p1.éxitos;
-				System.out.println("Jugador 1 GANA");
+				EXITOS_jugador1 = ganaJg1(p1);
 			} else if ((opcion_JUGADOR1.equals("piedra")) && (opcion_JUGADOR2.equals("tijeras"))) {
-				EXITOS_jugador1 = ++p1.éxitos;
-				System.out.println("Jugador 1 GANA");
+				EXITOS_jugador1 = ganaJg1(p1);
 			} else if ((opcion_JUGADOR1.equals("tijeras")) && (opcion_JUGADOR2.equals("piedra"))) {
-				EXITOS_jugador2 = ++p2.éxitos;
-				System.out.println("Jugador 2 GANA");
+				EXITOS_jugador2 = ganaJg2(p2);
 			} else if ((opcion_JUGADOR1.equals("tijeras")) && (opcion_JUGADOR2.equals("papel"))) {
-				EXITOS_jugador1 = ++p1.éxitos;
-				System.out.println("Jugador 1 GANA");
+				EXITOS_jugador1 = ganaJg1(p1);
 			} else if ((opcion_JUGADOR1.equals("papel")) && (opcion_JUGADOR2.equals("tijeras"))) {
-				EXITOS_jugador2 = ++p2.éxitos;
-				System.out.println("Jugador 2 GANA");
+				EXITOS_jugador2 = ganaJg2(p2);
 			}
 			if (opcion_JUGADOR1 == opcion_JUGADOR2) {
 				EmPaTeS++;
@@ -55,6 +49,20 @@ public class Juego {
 			}
 			System.out.println();
 		} while (fin_de_juego != true);
+	}
+
+	private static Integer ganaJg1(Jugador p1) {
+		Integer EXITOS_jugador1;
+		EXITOS_jugador1 = ++p1.éxitos;
+		System.out.println("Jugador 1 GANA");
+		return EXITOS_jugador1;
+	}
+
+	private static Integer ganaJg2(Jugador p2) {
+		Integer EXITOS_jugador2;
+		System.out.println("Jugador 2 GANA");
+		EXITOS_jugador2 = ++p2.éxitos;
+		return EXITOS_jugador2;
 	}
 
 }
